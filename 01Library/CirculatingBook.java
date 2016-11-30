@@ -80,7 +80,7 @@ public class CirculatingBook extends LibraryBook {
     }
 
     public String toString() {
-	return super.toString() + "\n" + this.circulationStatus() + "\n";
+	return super.toString() + this.circulationStatus() + "\n";
     }
 
 }

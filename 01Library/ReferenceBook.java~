@@ -2,10 +2,12 @@ public class ReferenceBook extends LibraryBook {
 
     String collection;
 
+/*
     public ReferenceBook() {
 	super();
 	this.collection = "";
     }
+*/
 
     public ReferenceBook(String author, String title, String ISBN, String callNumber, String collection) {
 	super(author, title, ISBN, callNumber);

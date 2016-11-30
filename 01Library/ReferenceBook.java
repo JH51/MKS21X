@@ -69,7 +69,7 @@ public class ReferenceBook extends LibraryBook {
     }
 
     public String toString() {
-	return super.toString() + "\n" + this.collection + "\n";
+	return super.toString() + this.collection + "\n";
     }
 
 }

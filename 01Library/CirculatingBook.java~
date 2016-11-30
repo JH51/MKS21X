@@ -3,14 +3,16 @@ public class CirculatingBook extends LibraryBook {
     String currentHolder;
     String dueDate;
 
+/*
     public CirculatingBook() {
 	super();
 	this.currentHolder = "";
 	this.dueDate = "";
     }
+*/
 
     public CirculatingBook(String author, String title, String ISBN, String callNumber) {
-	super();
+	super(author, title, ISBN, callNumber);
 	this.currentHolder = "";
 	this.dueDate = "";
     }

@@ -50,7 +50,7 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
     }
 
     public String toString() {
-	return super.toString() + this.callNumber + "\n";
+	return super.toString() + "\n" + this.callNumber + "\n";
     }
     
 }
