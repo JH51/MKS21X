@@ -8,12 +8,12 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
     }
 
     public LibraryBook(String author, String title, String ISBN, String callNumber) {
-	super(author, title, ISBN, callNumber);
+	super();
 	this.callNumber = callNumber;
     }
 
     public String getAuthor() {
-	return super.getAuthor();
+        return super.getAuthor();
     }
 
     public String getTitle() {
@@ -29,15 +29,15 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
     }
 
     public void setAuthor(String author) {
-        super.set(author);
+        this.setAuthor(author);
     }
 
     public void setTitle(String title) {
-	super.set(title);
+	super.setTitle(title);
     }
 
     public void setISBN(String ISBN) {
-        super.set(ISBN);
+        super.setISBN(ISBN);
     }
 
     public void setCallNumber(String callNumber) {
@@ -50,4 +50,12 @@ abstract class LibraryBook extends Book implements Comparable<LibraryBook> {
 
     abstract String circulationStatus();
 
+    public int compareTo(LibraryBook other) {
+	return Integer.compare(Integer.parseInt(this.getCallNumber()), Integer.parseInt(other.getCallNumber()));
+    }
+
+    public String toString() {
+	return super.toString() + "\n" + this.callNumber + "\n";
+    }
+    
 }
