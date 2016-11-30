@@ -4,7 +4,7 @@ public class ReferenceBook extends LibraryBook {
 
     public ReferenceBook() {
 	super();
-	collection = "";
+	this.collection = "";
     }
 
     public ReferenceBook(String author, String title, String ISBN, String callNumber, String collection) {
