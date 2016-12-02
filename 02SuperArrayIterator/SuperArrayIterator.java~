@@ -5,7 +5,7 @@ public class SuperArrayIterator implements Iterator<String> {
     String element;
     SuperArray supAry;
 
-    public SuperArrayIterator(SuperArray supAry) {
+    public superArrayIterator(SuperArray supAry) {
 	element = "";
 	this.supAry = supAry;
     }
