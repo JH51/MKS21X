@@ -147,8 +147,8 @@ public class SuperArray implements Iterable<String> {
 	return (index < 0) ? -1 : index;
     }
 
-    public void iterator() {
-
+    public SuperArrayIterator iterator() {
+	return new SuperArrayIterator(this);
     }
 
 }

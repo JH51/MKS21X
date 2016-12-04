@@ -15,7 +15,15 @@ public class SuperArrayIterator implements Iterator<String> {
     }
 
     public String next() {
-	return this.hasNext() ? this.supAry.get(this.supAry.indexOf(element) + 1) : "";
+	if (this.hasNext()) {
+	    this.element = this.supAry.get(this.supAry.indexOf(this.element) + 1);
+	    return element;
+	}
+	else return "";//throw new NoSuchElementException();
+    }
+
+    public void remove() {
+	throw new UnsupportedOperationException();
     }
 
 }
