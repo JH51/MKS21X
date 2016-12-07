@@ -12,11 +12,15 @@ public class Barcode implements Comparable<Barcode> {
 	    }
 	    this._checkDigit %= 10;
 	}
-	catch(StringIndexOutOfBoundsException e) {
+	catch (StringIndexOutOfBoundsException e) {
+	    throw new RuntimeException("Zip is not the correct length");
 	}
+	catch (NumberFormatException e) {
+	    throw new RuntimeException("Zip contains a non digit");
+	}
+    }
 
     public Barcode clone() {
 	
     }
-
     
