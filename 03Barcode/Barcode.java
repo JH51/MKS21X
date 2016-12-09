@@ -1,19 +1,21 @@
+import java.util.*;
+
 public class Barcode implements Comparable<Barcode> {
 
     private String _zip;
     private int _checkDigit;
-    public ArrayList<String> symbols = new ArrayList<String>();
+    public List<String> symbols = new ArrayList<String>();
 
-    symbols.add() = "||:::";
-    symbols.add() = ":::||";
-    symbols.add() = "::|:|";
-    symbols.add() = "::||:";
-    symbols.add() = ":|::|";
-    symbols.add() = ":|:|:";
-    symbols.add() = ":||::";
-    symbols.add() = "|:::|";
-    symbols.add() = "|::|:";
-    symbols.add() = "|:|::";
+    symbols.add("||:::");
+    symbols.add(":::||");
+    symbols.add("::|:|");
+    symbols.add("::||:");
+    symbols.add(":|::|");
+    symbols.add(":|:|:");
+    symbols.add(":||::");
+    symbols.add("|:::|");
+    symbols.add("|::|:");
+    symbols.add("|:|::");
     
     public Barcode(String zip) {
 	try {
@@ -28,8 +30,12 @@ public class Barcode implements Comparable<Barcode> {
 	}
     }
 
-    public Barcode clone() {
-	
+    public String toString() {
+	System.out.println(this._zip + this._checkDigit() + toCode(this.zip));
+    }
+
+    public int compareTo(Barcode other) {
+	return Integer.parseInt(this._zip) - Integer.parseInt(other._zip);
     }
 
     private int checkSum() {
@@ -41,7 +47,7 @@ public class Barcode implements Comparable<Barcode> {
 	return checkSum;
     }
 
-    public static String toBarcode(String zip) {
+    public static String toCode(String zip) {
 	String barcode = "|";
 	while (zip.length() > 0) {
 	    barcode += symbols.get(Integer.parseInt(barcode.substring(0,1)));
@@ -59,6 +65,6 @@ public class Barcode implements Comparable<Barcode> {
 	    barcode = barcode.substring(0,5);
 	}
 	return zip;
-    }	    
+    }
     
 }
