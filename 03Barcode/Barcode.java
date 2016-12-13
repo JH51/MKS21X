@@ -38,7 +38,7 @@ public class Barcode implements Comparable<Barcode> {
 	return Integer.parseInt(this._zip) - Integer.parseInt(other._zip);
     }
 
-    private int checkSum() {
+    private static int checkSum() {
 	int checkSum = 0;
 	for (int index = 0; index < this._zip.length(); index += 1) {
 	    checkSum += Integer.parseInt(this._zip.charAt(index));
