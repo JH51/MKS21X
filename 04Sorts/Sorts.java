@@ -31,7 +31,6 @@ public class Sorts{
 		    pos2 = i;
 		}
 	    }
-	    System.out.println(pos1 + " " + pos2 + "  ");
 	    swap(data, pos1, pos2);
 	    pos1 += 1;}		
     }
