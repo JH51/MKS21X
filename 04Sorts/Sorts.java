@@ -1,16 +1,16 @@
-public class Sorts {
+public class Sorts{
 
     public static String name(){
       return "09.Huang.Jonathan"; 
     }
 
-    private static boolean sorted(int [] data) {
-	boolean sorted = true;
-	for (int i = 1; i < data.length && sorted; i += 1) {
-	    sorted = data[i] >= data[i - 1];
+    private static boolean sorted(int[] data) {
+	boolean booleanSorted = true;
+	for (int i = 1; i < data.length && booleanSorted; i += 1) {
+	    booleanSorted = data[i] > data[i - 1];
 	}
-	return sorted;
-    }	    
+	return booleanSorted;
+    }
 
     private static void swap(int[] data, int a, int b) {
 	int A = data[a];
@@ -19,33 +19,21 @@ public class Sorts {
 	data[b] = A;
     }
     
-    public static void selectionSort(int[] data) {	
-	int index = 0;
-	int place = 0;
-	int minimum = data[index];
-	while (! sorted(data)) {	    
-	    for (int j = 0; j < data.length; j += 1) {
-		if (data[j] < minimum) {
-		    minimum = data[j];
-		    index = j;
+    public static void selectionSort(int[] data) {
+	int min = data[0];
+	int pos1 = 0;
+	int pos2 = 0;
+	while (! sorted(data) && pos1 < data.length) {
+	    min = data[data.length - 1];
+	    for (int i = pos1 + 1; i < data.length; i += 1) {
+		if (data[i] <= min) {
+		    min = data[i];
+		    pos2 = i;
 		}
 	    }
-	    swap(data, index, place);
-	    place += 1;
-	}
-    }
-    
-    public static void main(String[] args) {
-	int[] data = new int[5];
-	data[0] = 64;
-	data[1] = 25;
-	data[2] = 12;
-	data[3] = 22;
-	data[4] = 11;
-	selectionSort(data);
-	for (int e : data) {
-	    System.out.println(e);
-	}
+	    swap(data, pos1, pos2);
+	    pos1 += 1;}		
     }
 
 }
+
