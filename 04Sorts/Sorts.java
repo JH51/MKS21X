@@ -42,6 +42,12 @@ public class Sorts{
 		temp = data[pos2]
 	        while (data[pos2] < data[pos1]) {
 		    swap(data, pos2, pos2 - 1);
+		    pos2
+		}
+		data[pos2] = temp;
+	    }
+	}
+    }
 		    
 			
 
