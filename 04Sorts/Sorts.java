@@ -39,10 +39,10 @@ public class Sorts{
 	int temp;
 	while (! sorted(data)) {
 	    for (int pos1 = 1; pos1 < data.length; pos1 += 1) {
-		temp = data[pos2]
+		int pos2 = pos1;
+		temp = data[pos2];
 	        while (data[pos2] < data[pos1]) {
 		    swap(data, pos2, pos2 - 1);
-		    pos2
 		}
 		data[pos2] = temp;
 	    }
