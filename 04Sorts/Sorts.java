@@ -36,7 +36,11 @@ public class Sorts{
 		}
 	    }
 	    swap(data, pos1, pos2);
-	    pos1 += 1;}		
+	    pos1 += 1;
+	}
+
+	System.out.println(System.currentTimeMillis());
+	
     }
 
     public static void insertionSort(int[] data) {
@@ -53,19 +57,37 @@ public class Sorts{
 		pos2 -= 1;
 	    }
 	}
+
+	System.out.println(System.currentTimeMillis());
+
     }
 
-    /*
+    public static void bubbleSort(int[] data) {
+	while (! sorted(data)) {
+	    for (int i = 0; i < data.length - 1; i += 1) {
+		if (data[i] > data[i + 1]) swap(data, i, i + 1);
+		
+		for (int j : data) System.out.print(j + " ");
+		System.out.println(sorted(data) + "");
+
+	    }
+	}
+
+	System.currentTimeMillis();
+
+    }
+
+
     public static void main(String[] args) {
 	int[] a = {7,3,1,4,5,4};
-	insertionSort(a);
+	bubbleSort(a);
 	for (int i : a) System.out.print(i + " ");
 	System.out.println("");
 	int[] b = {18989,654,6546,43,786,23};
 	insertionSort(b);
-	for (int i : b) System.out.print(i + " ");
+	//for (int i : b) System.out.print(i + " ");
     }
-    */
+    
 
 }
 
