@@ -65,7 +65,7 @@ public class Sorts{
 	insertionSort(b);
 	for (int i : b) System.out.print(i + " ");
     }
-    
+    */
 
 }
 
