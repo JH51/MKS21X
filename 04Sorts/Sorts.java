@@ -7,7 +7,7 @@ public class Sorts{
     private static boolean sorted(int[] data) {
 	boolean booleanSorted = true;
 	for (int i = 1; i < data.length && booleanSorted; i += 1) {
-	    booleanSorted = data[i] > data[i - 1];
+	    booleanSorted = data[i] >= data[i - 1];
 	}
 	return booleanSorted;
     }
@@ -46,10 +46,6 @@ public class Sorts{
     public static void insertionSort(int[] data) {
 	int temp;
 	for (int pos1 = 0; pos1 < data.length - 1 && ! sorted(data); pos1 += 1) {
-	    
-	    //for (int i : data) System.out.print(i + " ");
-	    //System.out.println("");
-	    
 	    int pos2 = pos1 + 1;
 	    temp = data[pos2];
 	    while (pos2 > 0 && pos2 < data.length){
@@ -63,36 +59,32 @@ public class Sorts{
     }
 
     public static void bubbleSort(int[] data) {
+	int counter = 1;
 	while (! sorted(data)) {
 	    for (int i = 0; i < data.length - 1; i += 1) {
-		int counter = 0;
+		counter = 0;
 		if (data[i] > data[i + 1]) {
 		    swap(data, i, i + 1);
 		    counter += 1;
 		}
-		if (counter == 0) return;
-		
-		for (int j : data) System.out.print(j + " ");
-		System.out.println(sorted(data) + "");
-
-	    }
+	    }	
 	}
-
-	System.currentTimeMillis();
-
     }
 
-
+    /*
     public static void main(String[] args) {
 	int[] a = {7,3,1,4,5,4};
 	bubbleSort(a);
 	for (int i : a) System.out.print(i + " ");
 	System.out.println("");
-	int[] b = {18989,654,6546,43,786,23};
-	insertionSort(b);
+	//int[] b = {18989,654,6546,43,786,23};
+	//insertionSort(b);
 	//for (int i : b) System.out.print(i + " ");
+	int[] c = {1,3,4,4,5,7};
+	System.out.println(sorted(c));
+	bubbleSort(c);
     }
-    
+    */
 
 }
 
