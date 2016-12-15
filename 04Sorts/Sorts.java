@@ -24,10 +24,6 @@ public class Sorts{
 	int pos1 = 0;
 	int pos2 = 0;
 	while (! sorted(data) && pos1 < data.length) {
-	    
-	    //for (int i : data) System.out.print(i + " ");
-	    //System.out.println(" ");
-
 	    min = data[data.length - 1];
 	    for (int i = pos1; i < data.length; i += 1) {
 		if (data[i] <= min) {
