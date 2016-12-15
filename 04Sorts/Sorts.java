@@ -24,8 +24,12 @@ public class Sorts{
 	int pos1 = 0;
 	int pos2 = 0;
 	while (! sorted(data) && pos1 < data.length) {
+	    
+	    //for (int i : data) System.out.print(i + " ");
+	    //System.out.println(" ");
+
 	    min = data[data.length - 1];
-	    for (int i = pos1 + 1; i < data.length; i += 1) {
+	    for (int i = pos1; i < data.length; i += 1) {
 		if (data[i] <= min) {
 		    min = data[i];
 		    pos2 = i;
@@ -37,19 +41,31 @@ public class Sorts{
 
     public static void insertionSort(int[] data) {
 	int temp;
-	while (! sorted(data)) {
-	    for (int pos1 = 1; pos1 < data.length; pos1 += 1) {
-		int pos2 = pos1;
-		temp = data[pos2];
-	        while (data[pos2] < data[pos1]) {
-		    swap(data, pos2, pos2 - 1);
-		}
-		data[pos2] = temp;
+	for (int pos1 = 0; pos1 < data.length - 1 && ! sorted(data); pos1 += 1) {
+	    
+	    //for (int i : data) System.out.print(i + " ");
+	    //System.out.println("");
+	    
+	    int pos2 = pos1 + 1;
+	    temp = data[pos2];
+	    while (pos2 > 0 && pos2 < data.length){
+		if (temp < data[pos2 - 1]) swap(data, pos2, pos2 - 1);
+		pos2 -= 1;
 	    }
 	}
     }
-		    
-			
+
+    /*
+    public static void main(String[] args) {
+	int[] a = {7,3,1,4,5,4};
+	insertionSort(a);
+	for (int i : a) System.out.print(i + " ");
+	System.out.println("");
+	int[] b = {18989,654,6546,43,786,23};
+	insertionSort(b);
+	for (int i : b) System.out.print(i + " ");
+    }
+    */
 
 }
 
