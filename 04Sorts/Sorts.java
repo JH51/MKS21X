@@ -70,7 +70,7 @@ public class Sorts{
 		    swap(data, i, i + 1);
 		    counter += 1;
 		}
-		if (counter == 0) break;
+		if (counter == 0) return;
 		
 		for (int j : data) System.out.print(j + " ");
 		System.out.println(sorted(data) + "");
