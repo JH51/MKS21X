@@ -65,7 +65,12 @@ public class Sorts{
     public static void bubbleSort(int[] data) {
 	while (! sorted(data)) {
 	    for (int i = 0; i < data.length - 1; i += 1) {
-		if (data[i] > data[i + 1]) swap(data, i, i + 1);
+		int counter = 0;
+		if (data[i] > data[i + 1]) {
+		    swap(data, i, i + 1);
+		    counter += 1;
+		}
+		if (counter == 0) break;
 		
 		for (int j : data) System.out.print(j + " ");
 		System.out.println(sorted(data) + "");
