@@ -1,4 +1,4 @@
-public class Sorts{
+public class Sorts {
 
     public static String name(){
       return "09.Huang.Jonathan"; 
@@ -20,6 +20,7 @@ public class Sorts{
     }
     
     public static void selectionSort(int[] data) {
+	long start = System.currentTimeMillis();
 	int min = data[0];
 	int pos1 = 0;
 	int pos2 = 0;
@@ -35,11 +36,12 @@ public class Sorts{
 	    pos1 += 1;
 	}
 
-	System.out.println(System.currentTimeMillis());
+	System.out.println(System.currentTimeMillis() - start);
 	
     }
 
     public static void insertionSort(int[] data) {
+	long start = System.currentTimeMillis();
 	int temp;
 	for (int pos1 = 0; pos1 < data.length - 1 && ! sorted(data); pos1 += 1) {
 	    int pos2 = pos1 + 1;
@@ -50,11 +52,12 @@ public class Sorts{
 	    }
 	}
 
-	System.out.println(System.currentTimeMillis());
+	System.out.println(System.currentTimeMillis() - start);
 
     }
 
     public static void bubbleSort(int[] data) {
+	long start = System.currentTimeMillis();
 	int counter = 1;
 	while (! sorted(data)) {
 	    for (int i = 0; i < data.length - 1; i += 1) {
@@ -64,23 +67,11 @@ public class Sorts{
 		    counter += 1;
 		}
 	    }	
+	System.out.println(System.currentTimeMillis() - start);
 	}
     }
 
-    /*
-    public static void main(String[] args) {
-	int[] a = {7,3,1,4,5,4};
-	bubbleSort(a);
-	for (int i : a) System.out.print(i + " ");
-	System.out.println("");
-	//int[] b = {18989,654,6546,43,786,23};
-	//insertionSort(b);
-	//for (int i : b) System.out.print(i + " ");
-	int[] c = {1,3,4,4,5,7};
-	System.out.println(sorted(c));
-	bubbleSort(c);
-    }
-    */
+
 
 }
 
