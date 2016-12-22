@@ -35,9 +35,7 @@ public class Sorts {
 	    swap(data, pos1, pos2);
 	    pos1 += 1;
 	}
-
-	System.out.println(System.currentTimeMillis() - start);
-	
+	System.out.println(System.currentTimeMillis() - start);	
     }
 
     public static void insertionSort(int[] data) {
@@ -51,9 +49,7 @@ public class Sorts {
 		pos2 -= 1;
 	    }
 	}
-
 	System.out.println(System.currentTimeMillis() - start);
-
     }
 
     public static void bubbleSort(int[] data) {
